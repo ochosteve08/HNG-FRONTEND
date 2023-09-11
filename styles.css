@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    line-height: 1.6;
+    background-color: skyblue;
+     display: flex;
+     justify-content: center;
+    align-items: center;
+ 
+}
+main{
+    width: 50%;
+    background-color: white;
+   display: flex;
+   flex-direction: column;
+     justify-content: center;
+    align-items: center;
+  padding: 20px;
+  border-radius: 10%;
+}
+
+
+
+img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+span{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+.section{
+    display: flex;
+    gap: 30px;
+    background-color: grey;
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px 10px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.section > :nth-child(2) {
+    color: white;
+    font-weight: bold;
+}
+
+.github-url:hover{
+    color: blue;
+    opacity: 0.5;
+    transform: scale(1.1)
+}

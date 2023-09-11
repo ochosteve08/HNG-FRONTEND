@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HNG-TASK1</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    WELCOME
+    <main>
+        <div data-testid="slackDisplayImage">
+            <img src="./image/photo.jpg" alt="Stephen_Ujah">
+        </div>
+        <div class="section"> <span>Slack Name:</span>
+            <div data-testid="slackUserName"> Stephen_Ujah</div>
+        </div>
+
+        <div class="section">
+            <span>Current Day of the Week:</span>
+            <div data-testid="currentDayOfTheWeek"> </div>
+        </div>
+        <div class="section">
+            <span>Current UTC Time:</span>
+            <div data-testid="currentUTCTime"></div>
+        </div>
+        <div class="section">
+            <span>Track:</span>
+            <div data-testid="myTrack">Frontend</div>
+        </div>
+        <div class="section">
+            <span>GitHub URL:</span>
+            <a href="https://github.com/ochosteve08/HNG-FRONTEND" data-testid="githubURL" class="github-url"
+                target="_blank" rel="noopener noreferrer">View on
+                GitHub</a>
+        </div>
+    </main>
+
+
+
+    <script src="main.js"></script>
 </body>
+
 </html>
