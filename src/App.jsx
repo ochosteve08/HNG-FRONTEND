@@ -1,10 +1,10 @@
-import './App.css'
+
 
 function App() {
 
 
   return (
-    <div>
+    <div className='text-center text-red-600 text-3xl font-bold'>
     hello
       
     </div>
