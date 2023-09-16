@@ -9,6 +9,7 @@ const NotFoundPage = () => {
         <Link
           to="/"
           className="absolute top-6 left-10 p-4 font-bold text-white bg-[#BE123C] text-shadow rounded-xl"
+          
         >
           <div className="flex justify-centera text-center">
             <FaArrowLeft className="mt-1.5 mr-2 font-extrabold" />
