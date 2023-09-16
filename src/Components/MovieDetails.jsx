@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import { Link } from "react-router-dom";
 
 
@@ -130,7 +129,7 @@ const MovieDetails = ({
           data-testid="movie-overview"
           className="text-justify font-bold lg_pro:mx-4"
         >
-          <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span>{" "}
+          <span className="text-gray-800 mb-2 font-bold"> 📺Overview:</span>
           {overview}
         </p>
       </div>

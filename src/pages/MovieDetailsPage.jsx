@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import MovieDetails from "../components/MovieDetails";
-import Spinner from "../Components/Spinner";
 import { API_KEY } from "../Components/api/MovieApiKey";
-
-
+import Spinner from "../Components/Spinner";
+import MovieDetails from "../components/MovieDetails";
 
 const MovieDetailsPage = () => {
   const { id } = useParams();
@@ -42,7 +40,7 @@ const MovieDetailsPage = () => {
         <div className="loader-container">
           <div className="loader">
             {" "}
-            <Spinner />{" "}
+            <Spinner />
           </div>
         </div>
       )}
