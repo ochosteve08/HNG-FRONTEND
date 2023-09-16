@@ -6,7 +6,7 @@ import Pagination from '../assets/Pagination.svg'
 const Header = () => {
   return (
     <div
-      className="bg-cover bg-center bg-no-repeat h-screen"
+      className="bg-cover bg-center bg-no-repeat h-[90vh]"
       style={{ backgroundImage: `url(${Poster})` }}
     >
       <div className="px-4 lg:px-8 max-w-6xl mx-auto">
