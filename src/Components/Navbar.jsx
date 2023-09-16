@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import logo from '../assets/logo.svg'
 import Menu from '../assets/Menu.svg'
 import Search from './Search';
@@ -6,7 +7,7 @@ import Search from './Search';
 
 
 
-const Navbar = () => {
+const Navbar = ({setMovies}) => {
 
   return (
     <nav className=" flex justify-between items-center py-4 mx-auto text-white">
@@ -16,7 +17,7 @@ const Navbar = () => {
           MovieBox
         </p>
       </div>
-      <Search />
+      <Search setSearch={setMovies} />
       <div className="flex space-x-4 items-center">
         <button className="font-bold hidden sm:flex hover:scale-125 hover:shadow-lg transform transition-transform">
           Sign in

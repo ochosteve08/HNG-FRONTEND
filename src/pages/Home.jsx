@@ -22,6 +22,7 @@ const Home = () => {
       console.log(err);
     }
   };
+  console.log(movies)
 
   useEffect(() => {
     fetchMovie();
@@ -29,7 +30,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <Header />
+      <Header setMovies={setMovies} />
       <main className="px-4 lg:px-8 my-12">
         <div className="flex justify-between items-center">
           <p className="font-bold text-3xl">Featured Movies</p>
