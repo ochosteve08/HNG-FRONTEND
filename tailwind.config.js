@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         primary: ["DM Sans", "sans-serif"],
       },
+      screens: {
+        xs: "540px",
+      },
     },
   },
   plugins: [],
