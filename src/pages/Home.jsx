@@ -40,7 +40,7 @@ const Home = () => {
             <FaChevronRight />
           </p>
         </div>
-        <div className="text-center font-bold text-red-600 text-3xl mb-4 ">
+        <div className="text-center font-bold text-red-600 text-3xl mb-8">
           Top Ten Movies
         </div>
 
