@@ -5,9 +5,12 @@ import { TOP_URL } from "../Components/api/MovieApi";
 import { API_KEY } from "../Components/api/MovieApiKey";
 import { useState, useEffect } from "react";
 import { FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import Spinner from "../Components/Spinner";
 
 const Home = () => {
   const [movies, setMovies] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const fetchMovie = async () => {
     const query = "John Wick";
@@ -18,11 +21,12 @@ const Home = () => {
       const data = await response.json();
       let movies = data?.results?.slice(0, 10);
       setMovies(movies);
+      setLoading(false);
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
-
 
   useEffect(() => {
     fetchMovie();
@@ -30,21 +34,24 @@ const Home = () => {
 
   return (
     <div className="">
-      <Header setMovies={setMovies} />
-      <main className="px-4 lg:px-8 my-12">
+      <Header setMovies={setMovies} setLoading={setLoading} />
+      <main className="px-4 lg:px-8 my-12 relative">
         <div className="flex justify-between items-center mb-8">
           <p className="font-bold text-3xl shadow-lg">Featured Movies</p>
-          <p className="text-red-500 hover:text-red-600 hover:scale-125 shadow-lg transform transition-transform flex items-center gap-3 cursor-pointer">
+          <Link
+            to="favorites"
+            className="text-red-500 hover:text-red-600 hover:scale-125 shadow-lg transform transition-transform flex items-center gap-3 cursor-pointer"
+          >
             <span>See Favorites</span>
 
             <FaChevronRight />
-          </p>
+          </Link>
         </div>
         <div className="text-center font-bold text-red-600 text-3xl mb-8">
           Top Ten Movies
         </div>
 
-        <MovieList movies={movies} />
+        {loading ? <Spinner /> : <MovieList movies={movies} />}
       </main>
       <Footer />
     </div>

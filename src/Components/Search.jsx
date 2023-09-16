@@ -4,7 +4,7 @@ import { useState } from "react";
 import { API_URL } from "./api/MovieApi";
 import { API_KEY } from "./api/MovieApiKey";
 
-const Search = ({setSearch}) => {
+const Search = ({ setSearch, setLoading }) => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -16,12 +16,15 @@ const Search = ({setSearch}) => {
     const URL = `${API_URL}?api_key=${API_KEY}&query=${query}&language=en-US&include_adult=false`;
 
     try {
+      setLoading(true);
       const response = await fetch(URL);
       const data = await response.json();
-      setMovies(data.results.slice(0,10));
+      setMovies(data.results.slice(0, 10));
       setSearch(data.results.slice(0, 10));
+      setLoading(false);
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   };
 
@@ -29,7 +32,7 @@ const Search = ({setSearch}) => {
     event.preventDefault();
     if (query) {
       searchMovies();
-      setQuery('')
+      setQuery("");
     }
   };
 
