@@ -7,7 +7,7 @@ import Search from './Search';
 
 
 
-const Navbar = ({setMovies}) => {
+const Navbar = ({setMovies, setLoading}) => {
 
   return (
     <nav className=" flex justify-between items-center py-4 mx-auto text-white">
@@ -17,7 +17,7 @@ const Navbar = ({setMovies}) => {
           MovieBox
         </p>
       </div>
-      <Search setSearch={setMovies} />
+      <Search setSearch={setMovies} setLoading={setLoading} />
       <div className="flex space-x-4 items-center">
         <button className="font-bold hidden sm:flex hover:scale-125 hover:shadow-lg transform transition-transform">
           Sign in
