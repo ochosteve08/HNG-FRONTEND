@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import { API_URL } from "./api/MovieApi";
@@ -32,7 +33,7 @@ const Search = ({setSearch}) => {
     }
   };
 
-
+  console.log(movies);
 
   return (
     <form className="flex items-center relative w-1/2 " onSubmit={handleSubmit}>
