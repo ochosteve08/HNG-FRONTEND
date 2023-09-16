@@ -3,7 +3,7 @@ import { useState } from "react";
 import { API_URL } from "./api/MovieApi";
 import { API_KEY } from "./api/MovieApiKey";
 
-const Search = () => {
+const Search = ({setSearch}) => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
@@ -17,7 +17,8 @@ const Search = () => {
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      setMovies(data.results);
+      setMovies(data.results.slice(0,10));
+      setSearch(data.results.slice(0, 10));
     } catch (err) {
       console.log(err);
     }
@@ -31,7 +32,7 @@ const Search = () => {
     }
   };
 
-  console.log(movies);
+
 
   return (
     <form className="flex items-center relative w-1/2 " onSubmit={handleSubmit}>
