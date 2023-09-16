@@ -22,7 +22,7 @@ const Home = () => {
       console.log(err);
     }
   };
-  console.log(movies)
+
 
   useEffect(() => {
     fetchMovie();
@@ -32,17 +32,21 @@ const Home = () => {
     <div className="">
       <Header setMovies={setMovies} />
       <main className="px-4 lg:px-8 my-12">
-        <div className="flex justify-between items-center">
-          <p className="font-bold text-3xl">Featured Movies</p>
-          <p className="text-red-500 border flex items-center gap-3 cursor-pointer"> 
+        <div className="flex justify-between items-center mb-8">
+          <p className="font-bold text-3xl shadow-lg">Featured Movies</p>
+          <p className="text-red-500 hover:text-red-600 hover:scale-125 shadow-lg transform transition-transform flex items-center gap-3 cursor-pointer">
             <span>See Favorites</span>
 
             <FaChevronRight />
           </p>
         </div>
-        <MovieList movies={movies}/>
+        <div className="text-center font-bold text-red-600 text-3xl mb-4 ">
+          Top Ten Movies
+        </div>
+
+        <MovieList movies={movies} />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

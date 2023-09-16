@@ -6,10 +6,10 @@ const MovieCard = ({
   title,
   releaseDate,
   posterUrl,
-//   handleFavoriteToggle,
+  handleFavoriteToggle,
   id,
   voteAverage,
-//   favorites,
+  favorites,
 }) => {
   // Convert releaseDate to UTC format
   const formatDateToUTC = (releaseDate) => {
@@ -19,7 +19,10 @@ const MovieCard = ({
   const utcReleaseDate = formatDateToUTC(releaseDate);
 
   return (
-    <div className="text-black relative" data-testid="movie-card">
+    <div
+      className="text-black relative hover:scale-110 shadow-lg transform transition-transform"
+      data-testid="movie-card"
+    >
       <div
         className="bg-white p-4 shadow  flex flex-col justify-between rounded-lg h-full"
         style={{
@@ -40,7 +43,7 @@ const MovieCard = ({
             {title}
           </h2>
         </Link>
-        {/* <ToastContainer /> */}
+       
         <div className="flex justify-between items-center">
           <span
             className="text-gray-600 font-bold text-sm"
@@ -56,14 +59,14 @@ const MovieCard = ({
           </span>
         </div>
       </div>
-      {/* <button
+      <button
         className={`absolute top-6 text-2xl right-8 text-red-700 ${
-          favorites.includes(id) ? "opacity-100" : "opacity-60"
+          favorites?.includes(id) ? "opacity-100" : "opacity-60"
         } bg-white rounded-full p-[3px]`}
         onClick={() => handleFavoriteToggle(id)}
       >
         ❤️
-      </button> */}
+      </button>
     </div>
   );
 };
